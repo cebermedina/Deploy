@@ -18,11 +18,11 @@ Write-Host "Eliminando servicio ECS '$serviceName'..." -ForegroundColor Yellow
 aws ecs delete-service --cluster $clusterName --service $serviceName --force --region $region
 
 # Esperar a que el servicio sea eliminado completamente
-do {
-    Start-Sleep -Seconds 5
-    $status = aws ecs describe-services --cluster $clusterName --services $serviceName --region $region --query "services[0].status" --output text 2>$null
-    Write-Host "Esperando a que el servicio ECS sea eliminado... (estado: $status)" -ForegroundColor Cyan
-} while ($status -ne "INACTIVE")
+# do {
+#     Start-Sleep -Seconds 5
+#     $status = aws ecs describe-services --cluster $clusterName --services $serviceName --region $region --query "services[0].status" --output text 2>$null
+#     Write-Host "Esperando a que el servicio ECS sea eliminado... (estado: $status)" -ForegroundColor Cyan
+# } while ($status -ne "INACTIVE")
 
 
 # Reducir desired count a 0 (detiene tareas activas)

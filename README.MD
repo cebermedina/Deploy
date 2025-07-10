@@ -87,4 +87,9 @@ To reduce costs during development, stop services and RDS instance:
 - Keeping those resources reduces future deployment time and effort.
 ---
 
+## How to install pgAdmin in Docker
+### Open a powershell console and navigate to the pg-stack folder
+   - run the next command: docker compose up -d
+ With it you should be able to start working with posgreSQL
+
 End of file.
